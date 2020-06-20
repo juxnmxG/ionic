@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
 
+
 const routes: Routes = [
   {
     path: 'tabs',
@@ -23,6 +24,14 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      },
+      {
+        path: 'setting1',
+        loadChildren: () => import('../setting/setting.module').then( m => m.SettingPageModule)
+      },
+      {
+        path: 'api1',
+        loadChildren: () => import('../api/api.module').then( m => m.ApiPageModule)
       }
     ]
   },

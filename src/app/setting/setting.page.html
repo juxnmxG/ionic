@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos del servidor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Datos</h1>
+  <ion-list>
+    <button ion-item *ngFor="let usuario of usuarios">
+      {{usuario.nombre}}
+    </button>
+  </ion-list>
+</ion-content>

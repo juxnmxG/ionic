@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {RestService} from '../service/rest.service';
 
 @Component({
   selector: 'app-tab1',
@@ -7,6 +8,17 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
-  constructor() {}
+  usuarios
+
+  constructor(public service: RestService) { }
+
+  ionViewDidLoad(){
+    this.service.obtenerDatos()
+    .subscribe(
+      (data) => {
+        this.usuarios = data;
+      }
+    )
+  }
 
 }
